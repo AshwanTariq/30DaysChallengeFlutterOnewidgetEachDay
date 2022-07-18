@@ -1,6 +1,3 @@
-import 'dart:html';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -11,7 +8,7 @@ class Incrementor extends StatefulWidget {
       required this.text,
       this.borderRadius = 20,
       this.borderWidth = 2,
-      this.borderColor = Colors.yellow,
+      this.borderColor = Colors.black87,
       this.initialValue = 0})
       : super(key: key);
 
@@ -36,17 +33,16 @@ class _IncrementorState extends State<Incrementor> {
 
   @override
   Widget build(BuildContext context) {
-
-    _textEditingController.text=value.toString();
-
+    _textEditingController.text = value.toString();
 
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(widget.borderRadius),
-            border: Border.all(
-                color: widget.borderColor, width: widget.borderWidth)),
+          borderRadius: BorderRadius.circular(widget.borderRadius),
+          border:
+              Border.all(color: widget.borderColor, width: widget.borderWidth),
+        ),
         height: 43,
         child: Row(
           children: [
@@ -69,16 +65,8 @@ class _IncrementorState extends State<Incrementor> {
                     }
                   });
                 },
-                icon: FaIcon(FontAwesomeIcons.minus)),
-            TextField(
-              controller: _textEditingController,
-              keyboardType: TextInputType.number,
-              onSubmitted: (value) {
-
-                widget.onchangedCallback.call(int.parse(value));
-              },
-            ),
-
+                icon:const FaIcon(FontAwesomeIcons.minus)),
+            Text(value.toString()),
             IconButton(
                 onPressed: () {
                   setState(() {
@@ -86,7 +74,7 @@ class _IncrementorState extends State<Incrementor> {
                     widget.onchangedCallback.call(value);
                   });
                 },
-                icon: Icon(Icons.add)),
+                icon:const Icon(Icons.add)),
           ],
         ),
       ),
