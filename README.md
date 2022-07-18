@@ -1,15 +1,23 @@
-# flutter_project
+# One Widget Each Day 
 
-A new Flutter project.
+i will try to create widget that is not available on Pub.dev
 
 ## Getting Started
+Give me creative ideas.
 
-This project is a starting point for a Flutter application.
+## DAY 1
 
-A few resources to get you started if this is your first Flutter project:
+Widget can be used in any application for different purposes.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+![day1 Quantity add](https://user-images.githubusercontent.com/81414269/179511843-a630da3e-5849-47f5-8e57-0f6cd70e11c6.gif)
+
+```
+Incrementor(
+                onchangedCallback: (result){
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("$result David's Perfume"),duration: Duration(milliseconds: 200),));
+            }, text: "David's Perfume")
+```
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
